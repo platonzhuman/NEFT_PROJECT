@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEFT - Главная</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script type="text/javascript">
+    (function() {
+        emailjs.init("mj5IZUdX1NUx42pAQ"); // Ваш Public Key
+    })();
+</script>
+<body>
+    <!-- Экран загрузки -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-icon">
+            <img src="./images/INOK.png" alt="Логотип" class="loading-logo-img">
+        </div>
+        <div class="loading-spinner"></div>
+    </div>
+
+    <!-- Основной заголовок -->
+    <header class="main-header">
+        <div class="container header-content">
+            <div class="logo"><a href="index.html">NEFT</a></div>
+        </div>
+    </header>
+
+    <!-- Карточки с ссылками -->
+    <section class="cards-section">
+        <div class="container">
+            <h2 class="section-title">Наши направления</h2>
+            <div class="cards">
+                <a href="#" class="card-link">
+                    <div class="card-img" style="background-color: #4a6491;"></div>
+                    <div class="card-content">
+                        <h3 class="card-title">Веб-разработка</h3>
+                        <p class="card-desc">Создание современных и адаптивных веб-сайтов с использованием передовых технологий.</p>
+                    </div>
+                </a>
+                <a href="#" class="card-link">
+                    <div class="card-img" style="background-color: #3498db;"></div>
+                    <div class="card-content">
+                        <h3 class="card-title">Дизайн интерфейсов</h3>
+                        <p class="card-desc">Разработка интуитивно понятных и эстетичных пользовательских интерфейсов.</p>
+                    </div>
+                </a>
+                <a href="#" class="card-link">
+                    <div class="card-img" style="background-color: #2ecc71;"></div>
+                    <div class="card-content">
+                        <h3 class="card-title">Мобильные приложения</h3>
+                        <p class="card-desc">Создание кроссплатформенных мобильных приложений для iOS и Android.</p>
+                    </div>
+                </a>
+                <a href="#" class="card-link">
+                    <div class="card-img" style="background-color: #e74c3c;"></div>
+                    <div class="card-content">
+                        <h3 class="card-title">Аналитика данных</h3>
+                        <p class="card-desc">Глубокий анализ данных для принятия стратегических бизнес-решений.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Первая уникальная секция - галерея -->
+    <section class="gallery-section">
+        <div class="container">
+            <h2 class="section-title">Нефтяная промышленность</h2>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <div class="gallery-image" style="background-image: url('./images/1649.jpg');"></div>
+                    <div class="gallery-text">
+                        <h3>Добыча нефти</h3>
+                        <p>Процесс извлечения нефти из недр Земли с использованием современных технологий и оборудования.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image" style="background-image: url('./images/44626.jpg');"></div>
+                    <div class="gallery-text">
+                        <h3>Нефтепереработка</h3>
+                        <p>Превращение сырой нефти в полезные продукты: бензин, дизельное топливо, мазут и другие.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image" style="background-image: url('./images/5377.jpg');"></div>
+                    <div class="gallery-text">
+                        <h3>Нефтяные платформы</h3>
+                        <p>Морские сооружения для добычи нефти и газа с шельфовых месторождений.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image" style="background-image: url('./images/krasivyi-naturmort-s-vodoi.jpg');"></div>
+                    <div class="gallery-text">
+                        <h3>Транспортировка нефти</h3>
+                        <p>Перемещение нефти от мест добычи к перерабатывающим заводам с помощью трубопроводов и танкеров.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image" style="background-image: url('./images/krasivyi-zakat-nad-neftanym-mestorozdeniem-s-domkratom.jpg');"></div>
+                    <div class="gallery-text">
+                        <h3>Нефтехимия</h3>
+                        <p>Производство химических продуктов на основе нефти и природного газа.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image" style="background-image: url('./images/pole-s-domkratami-neftanyh-nasosov-v-okruzenii-zeleni-pod-pasmurnym-nebom-i-solnecnym-svetom.jpg');"></div>
+                    <div class="gallery-text">
+                        <h3>Экология и нефть</h3>
+                        <p>Современные методы снижения воздействия нефтедобычи на окружающую среду.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image" style="background-image: url('./images/pole-s-domkratami-neftanyh-nasosov-v-okruzenii-zeleni-pod-solnecnym-svetom.jpg');"></div>
+                    <div class="gallery-text">
+                        <h3>Инновации в нефтяной отрасли</h3>
+                        <p>Новые технологии и методы повышения эффективности нефтедобычи и переработки.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image" style="background-image: url('./images/siluet-maslanogo-nasosa-noc-u.jpg');"></div>
+                    <div class="gallery-text">
+                        <h3>Будущее энергетики</h3>
+                        <p>Роль нефти в глобальной энергетической системе и переход к устойчивым источникам энергии.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Вторая уникальная секция - таймлайн -->
+    <section class="timeline-section">
+        <div class="container">
+            <h2 class="section-title">Этапы разработки</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Этап 1</div>
+                        <h3>Анализ и планирование</h3>
+                        <p>Изучение требований, создание технического задания и планирование проекта.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Этап 2</div>
+                        <h3>Проектирование</h3>
+                        <p>Создание прототипов, дизайна и архитектуры будущего решения.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Этап 3</div>
+                        <h3>Разработка</h3>
+                        <p>Непосредственная реализация проекта согласно утвержденному плану.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Этап 4</div>
+                        <h3>Тестирование</h3>
+                        <p>Проверка функциональности, устранение ошибок и оптимизация.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+        <!-- Секция обратной связи -->
+    <section class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Оставьте заявку</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Свяжитесь с нами</h3>
+                    <p>Мы готовы ответить на все ваши вопросы и обсудить сотрудничество. Оставьте заявку, и наш специалист свяжется с вами в ближайшее время.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>pzhuman@inbox.ru</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <span>Пн-Пт: 9:00 - 18:00</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+7 (XXX) XXX-XX-XX</span>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" required>
+                        <label for="name">Ваше имя</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" required>
+                        <label for="email">Ваш email</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="phone" name="phone">
+                        <label for="phone">Телефон (необязательно)</label>
+                    </div>
+                    <div class="form-group">
+                        <select id="subject" name="subject" required>
+                            <option value="" disabled selected></option>
+                            <option value="cooperation">Сотрудничество</option>
+                            <option value="consultation">Консультация</option>
+                            <option value="partnership">Партнерство</option>
+                            <option value="other">Другое</option>
+                        </select>
+                        <label for="subject">Тема обращения</label>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                        <label for="message">Ваше сообщение</label>
+                    </div>
+                    <button type="submit" class="submit-btn">
+                        <span>Отправить заявку</span>
+                        <div class="loading-spinner"></div>
+                    </button>
+                    <div class="form-message" id="formMessage"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер для ПК -->
+    <footer class="desktop-footer">
+        <div class="container footer-content">
+            <div class="footer-links">
+                <div class="footer-menu">
+                    <a href="#" class="footer-link">Компания</a>
+                    <div class="footer-dropdown">
+                        <a href="#">О компании</a>
+                        <a href="#">История</a>
+                        <a href="#">Руководство</a>
+                        <a href="#">Структура</a>
+                        <a href="#">Достижения</a>
+                    </div>
+                </div>
+                <div class="footer-menu">
+                    <a href="#" class="footer-link">Бизнес</a>
+                    <div class="footer-dropdown">
+                        <a href="#">Добыча нефти</a>
+                        <a href="#">Переработка</a>
+                        <a href="#">Нефтехимия</a>
+                        <a href="#">Сбыт продукции</a>
+                        <a href="#">Энергетика</a>
+                    </div>
+                </div>
+                <div class="footer-menu">
+                    <a href="#" class="footer-link">Инвесторам</a>
+                    <div class="footer-dropdown">
+                        <a href="#">Акции</a>
+                        <a href="#">Отчетность</a>
+                        <a href="#">Дивиденды</a>
+                        <a href="#">Раскрытие информации</a>
+                        <a href="#">События</a>
+                    </div>
+                </div>
+                <div class="footer-menu">
+                    <a href="#" class="footer-link">Пресс-центр</a>
+                    <div class="footer-dropdown">
+                        <a href="#">Новости</a>
+                        <a href="#">Пресс-релизы</a>
+                        <a href="#">Медиагалерея</a>
+                        <a href="#">Контакты для СМИ</a>
+                    </div>
+                </div>
+                <div class="footer-menu">
+                    <a href="#" class="footer-link">Карьера</a>
+                    <div class="footer-dropdown">
+                        <a href="#">Вакансии</a>
+                        <a href="#">Студентам</a>
+                        <a href="#">Обучение и развитие</a>
+                        <a href="#">Социальная политика</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Мобильный футер -->
+    <div class="mobile-footer">
+        <div class="mobile-footer-toggle">
+            <img src="./images/INOK.png" alt="Меню" class="mobile-footer-logo">
+        </div>
+    </div>
+
+    <!-- Оверлей и меню для мобильного футера -->
+    <div class="mobile-footer-overlay"></div>
+    <div class="mobile-footer-menu">
+        <button class="mobile-footer-close">&times;</button>
+        <h2 class="mobile-menu-title">Меню</h2>
+        <div class="mobile-menu-items">
+            <a href="#" class="mobile-menu-item">Компания</a>
+            <a href="#" class="mobile-menu-item">Бизнес</a>
+            <a href="#" class="mobile-menu-item">Инвесторам</a>
+            <a href="#" class="mobile-menu-item">Пресс-центр</a>
+            <a href="#" class="mobile-menu-item">Карьера</a>
+            <a href="#" class="mobile-menu-item">Контакты</a>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
