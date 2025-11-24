@@ -73,7 +73,7 @@ ul {
 
 /* Основной заголовок */
 .main-header {
-    background: linear-gradient(135deg, #003366 0%, #004080 50%, #0059b3 100%);
+    background: linear-gradient(135deg, #c2c2c2 0%, #162330 50%, #5582af 100%);
     color: white;
     padding: 20px 0;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);

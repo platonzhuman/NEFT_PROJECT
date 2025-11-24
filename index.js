@@ -195,3 +195,61 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+// ФИКС ДЛЯ SAFARI - добавьте в конец index.js
+function fixSafariIssues() {
+    // Исправление анимации галереи в Safari
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    
+    galleryItems.forEach(item => {
+        const text = item.querySelector('.gallery-text');
+        
+        // Принудительно устанавливаем начальное состояние
+        text.style.transform = 'translateY(100%)';
+        text.style.transition = 'transform 0.4s ease';
+        
+        item.addEventListener('mouseenter', function() {
+            text.style.transform = 'translateY(0)';
+        });
+        
+        item.addEventListener('mouseleave', function() {
+            text.style.transform = 'translateY(100%)';
+        });
+    });
+    
+    // Оптимизация загрузки изображений
+    function optimizeImageLoading() {
+        const images = document.querySelectorAll('img');
+        
+        images.forEach(img => {
+            // Добавляем lazy loading
+            img.setAttribute('loading', 'lazy');
+            
+            // Оптимизируем размеры
+            if (img.naturalWidth > 800) {
+                img.style.maxWidth = '100%';
+                img.style.height = 'auto';
+            }
+        });
+        
+        // Для background images в галерее
+        const galleryImages = document.querySelectorAll('.gallery-image');
+        galleryImages.forEach(bgImg => {
+            const bgUrl = bgImg.style.backgroundImage.replace('url("', '').replace('")', '');
+            if (bgUrl) {
+                // Создаем предзагрузчик для background images
+                const preloader = new Image();
+                preloader.src = bgUrl;
+                preloader.onload = function() {
+                    // Изображение загружено, можно применять
+                    bgImg.style.backgroundImage = `url(${bgUrl})`;
+                };
+            }
+        });
+    }
+    
+    // Запускаем оптимизацию после полной загрузки страницы
+    window.addEventListener('load', optimizeImageLoading);
+}
+
+// Вызываем функцию исправлений
+fixSafariIssues();

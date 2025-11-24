@@ -1,0 +1,636 @@
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    color: #333;
+    line-height: 1.6;
+    background: linear-gradient(135deg, #ffffff 0%, #e6f0ff 50%, #cce0ff 100%);
+    padding-bottom: 70px;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Основной заголовок */
+.main-header {
+    background: linear-gradient(135deg, #c2c2c2 0%, #162330 50%, #5582af 100%);
+    color: white;
+    padding: 20px 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.header-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    font-size: 32px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+/* Герой секция */
+.about-hero {
+    padding: 100px 0;
+    margin: 30px;
+    border-radius: 30px;
+    background: linear-gradient(135deg, rgba(56, 70, 85, 0.9) 0%, rgba(0,89,179,0.8) 100%), url('./images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero-content p {
+    font-size: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    opacity: 0.9;
+}
+
+/* Миссия и ценности */
+.mission-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #d0ebe6 0%, #c2d2eb 50%, #90aedb 100%);
+    margin: 30px;
+    border-radius: 30px;
+}
+
+.mission-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.mission-card {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(0,51,102,0.1);
+}
+
+.mission-card:hover {
+    transform: translateY(-10px);
+}
+
+.mission-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #003366, #0059b3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    color: white;
+    font-size: 30px;
+}
+
+.mission-card h3 {
+    color: #003366;
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+.mission-card p {
+    color: #666;
+    line-height: 1.7;
+}
+
+/* История компании */
+.history-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #f0f7ff 0%, #e6f0ff 50%, #d9e6ff 100%);
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+    font-size: 36px;
+    color: #003366;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #003366, #0059b3);
+    border-radius: 2px;
+}
+
+.history-timeline {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.history-timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(to bottom, #003366, #0059b3);
+    transform: translateX(-50%);
+}
+
+.history-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.history-item:nth-child(odd) {
+    flex-direction: row-reverse;
+}
+
+.history-year {
+    flex: 0 0 100px;
+    text-align: center;
+    background: linear-gradient(135deg, #003366, #0059b3);
+    color: white;
+    padding: 15px;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 18px;
+    position: relative;
+    z-index: 2;
+}
+
+.history-content {
+    flex: 1;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    margin: 0 30px;
+    border-left: 4px solid #003366;
+}
+
+.history-item:nth-child(odd) .history-content {
+    border-left: none;
+    border-right: 4px solid #003366;
+}
+
+.history-content h3 {
+    color: #003366;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+/* Показатели */
+.stats-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #ffffff 0%, #f5f9ff 50%, #e6f0ff 100%);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    text-align: center;
+}
+
+.stat-item {
+    background: white;
+    padding: 40px 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border: 1px solid rgba(0,51,102,0.1);
+}
+
+.stat-number {
+    font-size: 48px;
+    font-weight: bold;
+    color: #003366;
+    margin-bottom: 10px;
+}
+
+.stat-label {
+    color: #666;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+/* Команда */
+.team-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #f0f7ff 0%, #e6f0ff 50%, #d9e6ff 100%);
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.team-member {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(0,51,102,0.1);
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+}
+
+.member-photo {
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(135deg, #003366, #0059b3);
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    position: relative;
+}
+
+.member-photo::after {
+    content: '👤';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+}
+
+.team-member h3 {
+    color: #003366;
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+
+.member-position {
+    color: #0059b3;
+    font-weight: 500;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.member-bio {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Футер для ПК */
+.desktop-footer {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 1200px;
+    background: linear-gradient(135deg, #003366 0%, #004080 50%, #0059b3 100%);
+    color: white;
+    padding: 15px 0;
+    z-index: 100;
+    box-shadow: 0 -5px 20px rgba(0,0,0,0.15);
+    border-radius: 22px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+}
+
+.footer-links {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Стили для меню футера */
+.footer-menu {
+    position: relative;
+    display: inline-block;
+}
+
+.footer-link {
+    transition: all 0.3s ease;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: 500;
+    position: relative;
+    display: inline-block;
+}
+
+.footer-link:hover {
+    color: #a0c4ff;
+    background: rgba(255,255,255,0.1);
+}
+
+/* Выпадающее меню */
+.footer-dropdown {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    color: #333;
+    min-width: 200px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    padding: 10px 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 101;
+    margin-bottom: 15px;
+}
+
+/* Стрелка выпадающего меню */
+.footer-dropdown::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 8px solid transparent;
+    border-top-color: white;
+}
+
+.footer-dropdown a {
+    display: block;
+    padding: 8px 15px;
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.2s ease;
+    text-align: left;
+}
+
+.footer-dropdown a:hover {
+    background: #f0f0f0;
+    color: #003366;
+}
+
+/* Показываем выпадающее меню при наведении */
+.footer-menu:hover .footer-dropdown {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Мобильный футер - скрыт по умолчанию */
+.mobile-footer {
+    display: none;
+}
+
+.mobile-footer-overlay {
+    display: none;
+}
+
+.mobile-footer-menu {
+    display: none;
+}
+
+/* Адаптивность */
+@media (max-width: 992px) {
+    .history-timeline::before {
+        left: 30px;
+    }
+    
+    .history-item {
+        flex-direction: row !important;
+        align-items: flex-start;
+    }
+    
+    .history-year {
+        flex: 0 0 80px;
+        margin-right: 20px;
+    }
+    
+    .history-content {
+        margin: 0;
+    }
+    
+    .footer-links {
+        gap: 20px;
+    }
+    
+    .footer-dropdown {
+        min-width: 180px;
+    }
+    
+    .hero-content h1 {
+        font-size: 36px;
+    }
+    
+    .hero-content p {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Скрываем футер для ПК на мобильных */
+    .desktop-footer {
+        display: none;
+    }
+    
+    /* Показываем мобильный футер */
+    .mobile-footer {
+        display: block;
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1000;
+    }
+    
+    .mobile-footer-toggle {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #003366 0%, #004080 50%, #0059b3 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border: 3px solid white;
+    }
+    
+    .mobile-footer-toggle:hover {
+        transform: scale(1.05);
+    }
+    
+    .mobile-footer-logo {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+    
+    /* Оверлей с блюром */
+    .mobile-footer-overlay {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(8px);
+        z-index: 999;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+    }
+    
+    .mobile-footer-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    /* Меню в оверлее */
+    .mobile-footer-menu {
+        display: block;
+        position: fixed;
+        bottom: 100px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+        max-width: 400px;
+        background: white;
+        border-radius: 20px;
+        padding: 30px 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        z-index: 1001;
+        opacity: 0;
+        visibility: hidden;
+        transform: translate(-50%, 20px);
+        transition: all 0.4s ease;
+    }
+    
+    .mobile-footer-menu.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translate(-50%, 0);
+    }
+    
+    .mobile-footer-close {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        background: none;
+        border: none;
+        font-size: 24px;
+        color: #003366;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        transition: background 0.3s ease;
+    }
+    
+    .mobile-footer-close:hover {
+        background: rgba(0, 51, 102, 0.1);
+    }
+    
+    .mobile-menu-items {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .mobile-menu-item {
+        padding: 15px 20px;
+        background: #f8f9fa;
+        border-radius: 10px;
+        color: #003366;
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        text-align: center;
+        font-size: 16px;
+    }
+    
+    .mobile-menu-item:hover {
+        background: #003366;
+        color: white;
+        transform: translateX(5px);
+    }
+    
+    .mobile-menu-title {
+        text-align: center;
+        color: #003366;
+        margin-bottom: 20px;
+        font-size: 24px;
+        font-weight: bold;
+    }
+    
+    /* Адаптивность для остальных элементов */
+    .mission-grid,
+    .stats-grid,
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .section-title {
+        font-size: 28px;
+    }
+    
+    .about-hero {
+        padding: 60px 0;
+    }
+    
+    .main-nav {
+        gap: 15px;
+    }
+    
+    .main-nav a {
+        padding: 6px 12px;
+        font-size: 14px;
+    }
+}

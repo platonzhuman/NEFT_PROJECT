@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О компании - NEFT</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="about.css" rel="stylesheet" type="text/css">
+    <style>
+        /* Стили для табов */
+        .tabs-container {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #d0ebe6 0%, #7086a7 50%, #1e2f49 100%);
+    margin: 30px;
+    border-radius: 30px;
+        }
+        
+        .tabs-nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .tab-btn {
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #d0ebe6 0%, #c2d2eb 50%, #90aedb 100%);
+            border: 2px solid #2c3e50;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            color: #2c3e50;
+        }
+        
+        .tab-btn:hover {
+            background: #2c3e50;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .tab-btn.active {
+            background: #2c3e50;
+            color: white;
+        }
+        
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Стили для новых секций */
+        .structure-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .structure-card {
+            background: linear-gradient(135deg, #d0ebe6 0%, #c2d2eb 50%, #90aedb 100%);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .achievement-card {
+            background: linear-gradient(135deg, #d0ebe6 0%, #c2d2eb 50%, #90aedb 100%);
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .business-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .business-card {
+            background: linear-gradient(135deg, #d0ebe6 0%, #c2d2eb 50%, #90aedb 100%);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .investors-grid, .career-grid, .press-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .info-card {
+            background: linear-gradient(135deg, #d0ebe6 0%, #c2d2eb 50%, #90aedb 100%);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .team-section{
+            background: linear-gradient(135deg, #d0ebe6 0%, #c2d2eb 50%, #90aedb 100%);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);            
+        }
+        .history-section{
+            background: linear-gradient(135deg, #d0ebe6 0%, #c2d2eb 50%, #90aedb 100%);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Основной заголовок -->
+    <header class="main-header">
+        <div class="container header-content">
+            <a href="index.html" class="logo">NEFT</a>
+        </div>
+    </header>
+
+    <!-- О компании -->
+    <section class="about-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>О компании NEFT</h1>
+                <p>Ведущая нефтяная компания с более чем 20-летним опытом работы в отрасли. Мы специализируемся на добыче, переработке и реализации нефтепродуктов высшего качества.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Навигация по вкладкам -->
+    <section class="tabs-container">
+        <div class="container">
+            <div class="tabs-nav">
+                <button class="tab-btn active" data-tab="about">О компании</button>
+                <button class="tab-btn" data-tab="history">История</button>
+                <button class="tab-btn" data-tab="management">Руководство</button>
+                <button class="tab-btn" data-tab="structure">Структура</button>
+                <button class="tab-btn" data-tab="achievements">Достижения</button>
+                <button class="tab-btn" data-tab="business">Бизнес</button>
+                <button class="tab-btn" data-tab="investors">Инвесторам</button>
+                <button class="tab-btn" data-tab="press">Пресс-центр</button>
+                <button class="tab-btn" data-tab="career">Карьера</button>
+            </div>
+
+            <!-- Вкладка О компании -->
+            <div id="about" class="tab-content active">
+                <section class="mission-section">
+                    <div class="container">
+                        <div class="mission-grid">
+                            <div class="mission-card">
+                                <div class="mission-icon">
+                                    <i class="fas fa-bullseye"></i>
+                                </div>
+                                <h3>Наша миссия</h3>
+                                <p>Обеспечение энергетической безопасности страны через инновационные технологии и устойчивое развитие нефтяной отрасли.</p>
+                            </div>
+                            <div class="mission-card">
+                                <div class="mission-icon">
+                                    <i class="fas fa-eye"></i>
+                                </div>
+                                <h3>Наше видение</h3>
+                                <p>Стать лидером в нефтяной промышленности, устанавливая новые стандарты эффективности и экологической ответственности.</p>
+                            </div>
+                            <div class="mission-card">
+                                <div class="mission-icon">
+                                    <i class="fas fa-handshake"></i>
+                                </div>
+                                <h3>Наши ценности</h3>
+                                <p>Профессионализм, инновации, ответственность и уважение к окружающей среде и сотрудникам.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="stats-section">
+                    <div class="container">
+                        <h2 class="section-title">Ключевые показатели</h2>
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <div class="stat-number" data-target="150">0</div>
+                                <div class="stat-label">месторождений</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number" data-target="25">0</div>
+                                <div class="stat-label">лет опыта</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number" data-target="5000">0</div>
+                                <div class="stat-label">сотрудников</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number" data-target="15">0</div>
+                                <div class="stat-label">стран экспорта</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Вкладка История -->
+            <div id="history" class="tab-content">
+                <section class="history-section">
+                    <div class="container">
+                        <h2 class="section-title">Наша история</h2>
+                        <div class="history-timeline">
+                            <div class="history-item">
+                                <div class="history-year">2003</div>
+                                <div class="history-content">
+                                    <h3>Основание компании</h3>
+                                    <p>Начало деятельности с небольших месторождений в Западной Сибири.</p>
+                                </div>
+                            </div>
+                            <div class="history-item">
+                                <div class="history-year">2010</div>
+                                <div class="history-content">
+                                    <h3>Расширение мощностей</h3>
+                                    <p>Запуск современного нефтеперерабатывающего завода мощностью 5 млн тонн в год.</p>
+                                </div>
+                            </div>
+                            <div class="history-item">
+                                <div class="history-year">2018</div>
+                                <div class="history-content">
+                                    <h3>Технологический прорыв</h3>
+                                    <p>Внедрение инновационных методов добычи и цифровизации процессов.</p>
+                                </div>
+                            </div>
+                            <div class="history-item">
+                                <div class="history-year">2023</div>
+                                <div class="history-content">
+                                    <h3>Лидерство в отрасли</h3>
+                                    <p>Достижение лидирующих позиций по эффективности добычи и экологическим стандартам.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Вкладка Руководство -->
+            <div id="management" class="tab-content">
+                <section class="team-section">
+                    <div class="container">
+                        <h2 class="section-title">Руководство компании</h2>
+                        <div class="team-grid">
+                            <div class="team-member">
+                                <div class="member-photo"></div>
+                                <h3>Иванов А.С.</h3>
+                                <p class="member-position">Генеральный директор</p>
+                                <p class="member-bio">Опыт работы в нефтяной отрасли - 30 лет. Доктор технических наук.</p>
+                            </div>
+                            <div class="team-member">
+                                <div class="member-photo"></div>
+                                <h3>Петрова Е.В.</h3>
+                                <p class="member-position">Технический директор</p>
+                                <p class="member-bio">Специалист в области нефтепереработки и новых технологий.</p>
+                            </div>
+                            <div class="team-member">
+                                <div class="member-photo"></div>
+                                <h3>Сидоров М.П.</h3>
+                                <p class="member-position">Директор по развитию</p>
+                                <p class="member-bio">Эксперт в области международных проектов и стратегического планирования.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Вкладка Структура -->
+            <div id="structure" class="tab-content">
+                <section class="structure-section">
+                    <div class="container">
+                        <h2 class="section-title">Структура компании</h2>
+                        <div class="structure-grid">
+                            <div class="structure-card">
+                                <i class="fas fa-industry fa-3x"></i>
+                                <h3>Добывающий блок</h3>
+                                <p>Управление разведкой и добычей нефти и газа</p>
+                            </div>
+                            <div class="structure-card">
+                                <i class="fas fa-refinery fa-3x"></i>
+                                <h3>Перерабатывающий блок</h3>
+                                <p>Нефтеперерабатывающие заводы и комплексы</p>
+                            </div>
+                            <div class="structure-card">
+                                <i class="fas fa-truck fa-3x"></i>
+                                <h3>Логистика и сбыт</h3>
+                                <p>Транспортировка и реализация продукции</p>
+                            </div>
+                            <div class="structure-card">
+                                <i class="fas fa-flask fa-3x"></i>
+                                <h3>Научный центр</h3>
+                                <p>Исследования и разработка новых технологий</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Вкладка Достижения -->
+            <div id="achievements" class="tab-content">
+                <section class="achievements-section">
+                    <div class="container">
+                        <h2 class="section-title">Наши достижения</h2>
+                        <div class="achievements-grid">
+                            <div class="achievement-card">
+                                <i class="fas fa-award"></i>
+                                <h3>Лучший работодатель 2023</h3>
+                                <p>Премия в области корпоративной культуры</p>
+                            </div>
+                            <div class="achievement-card">
+                                <i class="fas fa-leaf"></i>
+                                <h3>Экологический стандарт</h3>
+                                <p>Сертификат ISO 14001</p>
+                            </div>
+                            <div class="achievement-card">
+                                <i class="fas fa-chart-line"></i>
+                                <h3>Рекорд добычи</h3>
+                                <p>50 млн тонн нефти в год</p>
+                            </div>
+                            <div class="achievement-card">
+                                <i class="fas fa-medal"></i>
+                                <h3>Инновации в отрасли</h3>
+                                <p>Премия за технологические разработки</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Вкладка Бизнес -->
+            <div id="business" class="tab-content">
+                <section class="business-section">
+                    <div class="container">
+                        <h2 class="section-title">Наш бизнес</h2>
+                        <div class="business-grid">
+                            <div class="business-card">
+                                <i class="fas fa-oil-well fa-3x"></i>
+                                <h3>Добыча нефти</h3>
+                                <p>Эффективная разработка месторождений с применением современных технологий</p>
+                            </div>
+                            <div class="business-card">
+                                <i class="fas fa-industry fa-3x"></i>
+                                <h3>Переработка</h3>
+                                <p>Современные НПЗ с глубокой переработкой сырья</p>
+                            </div>
+                            <div class="business-card">
+                                <i class="fas fa-flask fa-3x"></i>
+                                <h3>Нефтехимия</h3>
+                                <p>Производство продуктов с высокой добавленной стоимостью</p>
+                            </div>
+                            <div class="business-card">
+                                <i class="fas fa-gas-pump fa-3x"></i>
+                                <h3>Сбыт продукции</h3>
+                                <p>Широкая сеть АЗС и оптовых поставок</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Вкладка Инвесторам -->
+            <div id="investors" class="tab-content">
+                <section class="investors-section">
+                    <div class="container">
+                        <h2 class="section-title">Информация для инвесторов</h2>
+                        <div class="investors-grid">
+                            <div class="info-card">
+                                <h3>Акции</h3>
+                                <p>Информация о котировках и дивидендной политике</p>
+                                <button class="tab-btn">Подробнее</button>
+                            </div>
+                            <div class="info-card">
+                                <h3>Отчетность</h3>
+                                <p>Финансовая и операционная отчетность компании</p>
+                                <button class="tab-btn">Подробнее</button>
+                            </div>
+                            <div class="info-card">
+                                <h3>События</h3>
+                                <p>Календарь мероприятий для инвесторов</p>
+                                <button class="tab-btn">Подробнее</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Вкладка Пресс-центр -->
+            <div id="press" class="tab-content">
+                <section class="press-section">
+                    <div class="container">
+                        <h2 class="section-title">Пресс-центр</h2>
+                        <div class="press-grid">
+                            <div class="info-card">
+                                <h3>Новости</h3>
+                                <p>Последние события и announcements компании</p>
+                                <button class="tab-btn">Читать</button>
+                            </div>
+                            <div class="info-card">
+                                <h3>Медиагалерея</h3>
+                                <p>Фото и видео материалы о компании</p>
+                                <button class="tab-btn">Смотреть</button>
+                            </div>
+                            <div class="info-card">
+                                <h3>Контакты для СМИ</h3>
+                                <p>Пресс-служба компании NEFT</p>
+                                <button class="tab-btn">Связаться</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Вкладка Карьера -->
+            <div id="career" class="tab-content">
+                <section class="career-section">
+                    <div class="container">
+                        <h2 class="section-title">Карьера в NEFT</h2>
+                        <div class="career-grid">
+                            <div class="info-card">
+                                <h3>Вакансии</h3>
+                                <p>Актуальные позиции в компании</p>
+                                <button class="tab-btn">Посмотреть</button>
+                            </div>
+                            <div class="info-card">
+                                <h3>Студентам</h3>
+                                <p>Стажировки и программы развития</p>
+                                <button class="tab-btn">Узнать больше</button>
+                            </div>
+                            <div class="info-card">
+                                <h3>Социальная политика</h3>
+                                <p>Условия труда и benefits для сотрудников</p>
+                                <button class="tab-btn">Подробнее</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер для ПК -->
+    <footer class="desktop-footer">
+        <div class="container footer-content">
+            <div class="footer-links">
+                <div class="footer-menu">
+                    <a href="#" class="footer-link">Компания</a>
+                    <div class="footer-dropdown">
+                        <a href="about.html">О компании</a>
+                        <a href="#">История</a>
+                        <a href="#">Руководство</a>
+                        <a href="#">Структура</a>
+                        <a href="#">Достижения</a>
+                    </div>
+                </div>
+                <div class="footer-menu">
+                    <a href="#" class="footer-link">Бизнес</a>
+                    <div class="footer-dropdown">
+                        <a href="#">Добыча нефти</a>
+                        <a href="#">Переработка</a>
+                        <a href="#">Нефтехимия</a>
+                        <a href="#">Сбыт продукции</a>
+                        <a href="#">Энергетика</a>
+                    </div>
+                </div>
+                <div class="footer-menu">
+                    <a href="#" class="footer-link">Инвесторам</a>
+                    <div class="footer-dropdown">
+                        <a href="#">Акции</a>
+                        <a href="#">Отчетность</a>
+                        <a href="#">Дивиденды</a>
+                        <a href="#">Раскрытие информации</a>
+                        <a href="#">События</a>
+                    </div>
+                </div>
+                <div class="footer-menu">
+                    <a href="#" class="footer-link">Пресс-центр</a>
+                    <div class="footer-dropdown">
+                        <a href="#">Новости</a>
+                        <a href="#">Пресс-релизы</a>
+                        <a href="#">Медиагалерея</a>
+                        <a href="#">Контакты для СМИ</a>
+                    </div>
+                </div>
+                <div class="footer-menu">
+                    <a href="#" class="footer-link">Карьера</a>
+                    <div class="footer-dropdown">
+                        <a href="#">Вакансии</a>
+                        <a href="#">Студентам</a>
+                        <a href="#">Обучение и развитие</a>
+                        <a href="#">Социальная политика</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Мобильный футер -->
+    <div class="mobile-footer">
+        <div class="mobile-footer-toggle">
+            <img src="./images/INOK.png" alt="Меню" class="mobile-footer-logo">
+        </div>
+    </div>
+
+    <!-- Оверлей и меню для мобильного футера -->
+    <div class="mobile-footer-overlay"></div>
+    <div class="mobile-footer-menu">
+        <button class="mobile-footer-close">&times;</button>
+        <h2 class="mobile-menu-title">Меню</h2>
+        <div class="mobile-menu-items">
+            <a href="index.html" class="mobile-menu-item">Главная</a>
+            <a href="about.html" class="mobile-menu-item">О компании</a>
+            <a href="#" class="mobile-menu-item">Бизнес</a>
+            <a href="#" class="mobile-menu-item">Инвесторам</a>
+            <a href="#" class="mobile-menu-item">Пресс-центр</a>
+            <a href="#" class="mobile-menu-item">Карьера</a>
+        </div>
+    </div>
+
+    <script>
+        // Функционал табов
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Убираем активный класс у всех кнопок и контента
+                    tabBtns.forEach(b => b.classList.remove('active'));
+                    tabContents.forEach(c => c.classList.remove('active'));
+                    
+                    // Добавляем активный класс к текущей кнопке
+                    btn.classList.add('active');
+                    
+                    // Показываем соответствующий контент
+                    const tabId = btn.getAttribute('data-tab');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+            
+            // Анимация счетчиков (оставляем из оригинального кода)
+            const statNumbers = document.querySelectorAll('.stat-number');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const target = entry.target;
+                        const targetValue = parseInt(target.getAttribute('data-target'));
+                        const duration = 2000;
+                        const step = targetValue / (duration / 16);
+                        let currentValue = 0;
+                        
+                        const timer = setInterval(() => {
+                            currentValue += step;
+                            if (currentValue >= targetValue) {
+                                currentValue = targetValue;
+                                clearInterval(timer);
+                            }
+                            target.textContent = Math.floor(currentValue);
+                        }, 16);
+                        
+                        observer.unobserve(target);
+                    }
+                });
+            });
+            
+            statNumbers.forEach(stat => {
+                observer.observe(stat);
+            });
+        });
+    </script>
+</body>
+</html>
