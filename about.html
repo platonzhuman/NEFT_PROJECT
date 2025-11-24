@@ -8,11 +8,12 @@
     <link href="about.css" rel="stylesheet" type="text/css">
     <style>
         /* Стили для табов */
+        /* Ваши существующие стили для табов остаются без изменений */
         .tabs-container {
-    padding: 80px 0;
-    background: linear-gradient(135deg, #d0ebe6 0%, #7086a7 50%, #1e2f49 100%);
-    margin: 30px;
-    border-radius: 30px;
+            padding: 80px 0;
+            background: linear-gradient(135deg, #d0ebe6 0%, #7086a7 50%, #1e2f49 100%);
+            margin: 30px;
+            border-radius: 30px;
         }
         
         .tabs-nav {
@@ -118,18 +119,352 @@
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
+        
         .team-section{
             background: linear-gradient(135deg, #d0ebe6 0%, #c2d2eb 50%, #90aedb 100%);
             padding: 2rem;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);            
         }
+        
         .history-section{
             background: linear-gradient(135deg, #d0ebe6 0%, #c2d2eb 50%, #90aedb 100%);
             padding: 2rem;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            width:100%;
         }
+
+        /* ДОБАВИТЬ ЭТИ СТИЛИ ДЛЯ МОБИЛЬНОГО МЕНЮ */
+        .mobile-footer {
+            display: none;
+        }
+        
+        .mobile-footer-overlay {
+            display: none;
+        }
+        
+        .mobile-footer-menu {
+            display: none;
+        }
+
+        /* Мобильный футер - активные состояния */
+        .mobile-footer-overlay.active {
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(8px);
+            z-index: 999;
+            opacity: 1;
+            visibility: visible;
+            transition: all 0.3s ease;
+        }
+        
+        .mobile-footer-menu.active {
+            display: block;
+            position: fixed;
+            bottom: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 400px;
+            background: white;
+            border-radius: 20px;
+            padding: 30px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            z-index: 1001;
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .mobile-footer-toggle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #003366 0%, #004080 50%, #0059b3 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 3px solid white;
+        }
+        
+        .mobile-footer-logo {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
+        .mobile-footer-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: #003366;
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: background 0.3s ease;
+        }
+        
+        .mobile-menu-items {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .mobile-menu-item {
+            padding: 15px 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            color: #003366;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-align: center;
+            font-size: 16px;
+        }
+
+        /* Медиа-запросы для мобильного меню */
+        @media (max-width: 768px) {
+            .desktop-footer {
+                display: none;
+            }
+            .history-content{
+                overflow: hidden;
+            }
+            .mobile-footer {
+                display: block;
+                position: fixed;
+                bottom: 20px;
+                left: 50%;
+                transform: translateX(-50%);
+                z-index: 1000;
+            }
+            
+            /* Остальные ваши медиа-запросы остаются здесь */
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .tabs-nav {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5rem;
+            }
+            
+            .tab-btn {
+                width: 100%;
+                max-width: 300px;
+                text-align: center;
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+            
+            .mission-grid,
+            .stats-grid,
+            .team-grid,
+            .structure-grid,
+            .achievements-grid,
+            .business-grid,
+            .investors-grid,
+            .career-grid,
+            .press-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .mission-card,
+            .structure-card,
+            .achievement-card,
+            .business-card,
+            .info-card {
+                padding: 1.5rem;
+                margin: 0.5rem 0;
+            }
+        }
+@media (max-width: 480px) {
+    /* Еще более мелкие экраны */
+    .about-hero h1 {
+        font-size: 1.8rem;
+    }
+    
+    .section-title {
+        font-size: 1.3rem;
+    }
+    
+    .mission-card h3,
+    .structure-card h3,
+    .business-card h3,
+    .info-card h3 {
+        font-size: 1.1rem;
+    }
+    
+    .mission-card p,
+    .structure-card p,
+    .business-card p,
+    .info-card p {
+        font-size: 0.9rem;
+    }
+    
+    .tab-btn {
+        padding: 8px 16px;
+        font-size: 13px;
+    }
+    
+    /* Статистика */
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+    }
+    
+    .stat-number {
+        font-size: 1.8rem;
+    }
+    
+    .stat-label {
+        font-size: 0.8rem;
+    }
+    
+    /* Карточки с уменьшенными отступами */
+    .mission-card,
+    .structure-card,
+    .achievement-card,
+    .business-card,
+    .info-card,
+    .team-section,
+    .history-section {
+        padding: 1rem;
+        margin: 0.5rem 0;
+        overflow: hidden;
+    }
+    
+    /* Кнопки внутри карточек */
+    .info-card .tab-btn {
+        width: 100%;
+        margin-top: 1rem;
+    }
+}
+
+@media (max-width: 360px) {
+    /* Для очень маленьких экранов */
+    .container {
+        padding: 0 0.5rem;
+    }
+    
+    .about-hero h1 {
+        font-size: 1.5rem;
+    }
+    
+    .section-title {
+        font-size: 1.2rem;
+    }
+    
+    .stat-number {
+        font-size: 1.5rem;
+    }
+    
+    .tab-btn {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+}
+
+/* Портретная ориентация */
+@media (max-width: 768px) and (orientation: portrait) {
+    .about-hero {
+        padding: 3rem 0;
+    }
+    
+    .tabs-container {
+        padding: 1rem 0;
+    }
+}
+
+/* Ландшафтная ориентация для мобильных */
+@media (max-width: 900px) and (orientation: landscape) {
+    .mission-grid,
+    .stats-grid,
+    .structure-grid,
+    .business-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .tabs-nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    .tab-btn {
+        width: auto;
+        min-width: 120px;
+    }
+}
+
+/* Высокие экраны */
+@media (min-height: 800px) and (max-width: 768px) {
+    .about-hero {
+        min-height: 40vh;
+        display: flex;
+        align-items: center;
+    }
+}
+
+/* Поддержка темной темы */
+@media (prefers-color-scheme: dark) {
+    @media (max-width: 768px) {
+        .structure-card,
+        .achievement-card,
+        .business-card,
+        .info-card,
+        .team-section,
+        .history-section {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 50%, #2c3e50 100%);
+            color: white;
+        }
+        
+        .tab-btn {
+            background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+            color: white;
+            border-color: #ecf0f1;
+        }
+        
+        .tab-btn.active {
+            background: #ecf0f1;
+            color: #2c3e50;
+        }
+    }
+}
+
+/* Поддержка редукции движения */
+@media (prefers-reduced-motion: reduce) {
+    @media (max-width: 768px) {
+        .tab-content {
+            animation: none;
+        }
+        
+        .tab-btn:hover {
+            transform: none;
+        }
+        
+        .stat-number {
+            transition: none;
+        }
+    }
+}
     </style>
 </head>
 <body>
@@ -547,22 +882,17 @@
             
             tabBtns.forEach(btn => {
                 btn.addEventListener('click', () => {
-                    // Убираем активный класс у всех кнопок и контента
                     tabBtns.forEach(b => b.classList.remove('active'));
                     tabContents.forEach(c => c.classList.remove('active'));
                     
-                    // Добавляем активный класс к текущей кнопке
                     btn.classList.add('active');
-                    
-                    // Показываем соответствующий контент
                     const tabId = btn.getAttribute('data-tab');
                     document.getElementById(tabId).classList.add('active');
                 });
             });
             
-            // Анимация счетчиков (оставляем из оригинального кода)
+            // Анимация счетчиков
             const statNumbers = document.querySelectorAll('.stat-number');
-            
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -589,6 +919,56 @@
             statNumbers.forEach(stat => {
                 observer.observe(stat);
             });
+
+            // ДОБАВИТЬ ЭТОТ КОД ДЛЯ МОБИЛЬНОГО МЕНЮ
+            const mobileFooterToggle = document.querySelector('.mobile-footer-toggle');
+            const mobileFooterOverlay = document.querySelector('.mobile-footer-overlay');
+            const mobileFooterMenu = document.querySelector('.mobile-footer-menu');
+            const mobileFooterClose = document.querySelector('.mobile-footer-close');
+            const mobileMenuItems = document.querySelectorAll('.mobile-menu-item');
+
+            // Открытие мобильного меню
+            if (mobileFooterToggle) {
+                mobileFooterToggle.addEventListener('click', function() {
+                    mobileFooterOverlay.classList.add('active');
+                    mobileFooterMenu.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+            }
+
+            // Закрытие мобильного меню
+            function closeMobileMenu() {
+                mobileFooterOverlay.classList.remove('active');
+                mobileFooterMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            if (mobileFooterClose) {
+                mobileFooterClose.addEventListener('click', closeMobileMenu);
+            }
+
+            if (mobileFooterOverlay) {
+                mobileFooterOverlay.addEventListener('click', closeMobileMenu);
+            }
+
+            // Закрытие меню при клике на пункт
+            mobileMenuItems.forEach(item => {
+                item.addEventListener('click', closeMobileMenu);
+            });
+
+            // Закрытие меню при нажатии Escape
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closeMobileMenu();
+                }
+            });
+
+            // Предотвращаем закрытие при клике на само меню
+            if (mobileFooterMenu) {
+                mobileFooterMenu.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                });
+            }
         });
     </script>
 </body>
